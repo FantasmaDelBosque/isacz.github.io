@@ -1,0 +1,963 @@
+
+/* .space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .space-mono-regular-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .space-mono-bold-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+} */
+
+/* Elimina el margen y padding predeterminado de los navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Mono", monospace;
+    line-height: 1.6;
+    color: #854a91;
+    background-color: #e7e6e4;
+}
+
+h1,
+h2 {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 50px;
+    text-align: left;
+    line-height: 130px;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+li {
+    list-style: none; 
+}
+
+span.bold {
+    font-weight: 600;
+}
+/* @media (max-width: 600px){
+    span.bold {
+        font-weight: 300;
+    }   
+} */
+
+div.container {
+    max-width: 1800px;
+    /* Ancho máximo del contenido */
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+/* -------------------------------------------------------- */
+/* ******************  header  ********************* */
+/* -------------------------------------------------------- */
+
+header {
+    max-width: 1800px;
+    margin: 0 auto; 
+    padding: 0;
+
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 100vh; 
+    position: relative; 
+}
+
+#slider {
+    margin-top: 0; /* Asegúrate que el slider esté alineado */
+}
+
+
+/* Estilos para el indicador de scroll (flecha) */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px; /* Coloca la flecha cerca de la parte inferior del header */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centro exacto */
+    z-index: 2;
+}
+
+/* Estilo para la flecha */
+.scroll-indicator .scroll {
+    font-size: 1.4rem;
+    animation: slideDown 1.5s infinite; /* Aplica una nueva animación de deslizamiento */
+    cursor: pointer;
+    display: inline-block;
+    text-align: center; /* Centra la flecha o el texto */
+    margin-bottom: 20px; /* Espacio para separación */
+}
+
+/* Nueva animación de deslizamiento hacia abajo */
+@keyframes slideDown {
+    0%, 100% {
+        transform: translateY(0); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(20px); /* Mueve hacia abajo para indicar scroll */
+    }
+}
+
+/* Para hacer que la flecha o el texto sea visible en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .scroll-indicator .scroll {
+        font-size: 1rem; /* Aumenta el tamaño para pantallas pequeñas */
+    }
+}
+
+
+/* -------------------------------------------------------- */
+/* ******************  menú ********************* */
+/* -------------------------------------------------------- */
+
+nav {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.5s ease; /* Suaviza las transiciones */
+}
+
+
+nav.scrolled {
+    top: 10px; /* Se mantiene un poco debajo del borde superior */
+    left: auto;
+    right: 20px; /* Alineado a la derecha */
+    width: 150px; /* Menú más pequeño */
+    height: auto;
+    display: flex;
+    justify-content: flex-end; /* El contenido se alinea a la derecha */
+    
+}
+
+nav.scrolled .firma {
+    height:150px; /* Se reduce la firma */
+}
+
+nav.scrolled .firma-item {
+    max-height: 50%; /* Tamaño más pequeño para las imágenes */
+    object-fit: contain;
+    
+}
+
+nav.scrolled .isasvg-hover {
+    width: 100px; /* Tamaño más pequeño para el nombre artístico */
+    height: auto;
+}
+
+div.item {
+    position: relative;
+    cursor: pointer;
+    transform: translate(0%, 50%);
+}
+
+div.firma {
+    width: auto;
+    height: 20rem;
+}
+
+img.firma-item {
+    max-width: 100%;
+    /* Asegura que la imagen no exceda el ancho del contenedor */
+    max-height: 100%;
+    /* Asegura que la imagen no exceda la altura del contenedor */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    position: absolute;
+    left: 0;
+    transform: translate(-50%, -50%);  
+}
+
+div.firma img:nth-child(1) {
+    left: 0%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+div.firma img:nth-child(2) {
+    left: 50%;
+    top: 49%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.mariposa {
+    animation: aleteo .8s linear alternate infinite;
+}
+
+
+@keyframes aleteo {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1);
+        /* Mantén scale en 1 */
+    }
+
+    25% {
+        transform: rotate(2deg) scale(1);
+        /* Mantén scale en 1 */
+    }
+
+    50% {
+        transform: rotate(0deg) scale(0.95);
+        /* Escala un poco más pequeño */
+    }
+
+    75% {
+        transform: rotate(2deg) scale(1);
+        /* Mantén scale en 1 */
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+        /* Mantén scale en 1 */
+    }
+}
+.firma_txt{
+    width: 100%;
+    display:flex;
+}
+.isasvg-hover {
+    transition: transform 0.3s ease, opacity 0.3s ease;    
+}
+
+.isasvg-hover:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+@media (max-width: 768px) {
+    div.item {
+        transform: translate(0%, 40%);
+    }
+}
+@media (max-width: 375px) {
+    div.item {
+        transform: translate(0%, 20%);
+    }
+}
+
+@media not all and (min-resolution: 0.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+      /* Tus estilos específicos para Safari */
+      div.item {
+          transform: translate(0%, 45%); /* Ajuste solo para Safari */
+      }
+    }
+  }
+  
+/* Ocultar la imagen pequeña por defecto */
+.static-logo {
+    display: none;
+}
+
+/* Mostrar la imagen pequeña solo en pantallas pequeñas (<= 768px) cuando se hace scroll */
+@media (max-width: 768px) {
+
+
+    .static-logo {
+        display: none;  /* Oculta por defecto en pantallas pequeñas hasta que haya scroll */
+    }
+
+    /* Ocultar las imágenes de la mariposa y las piernas al hacer scroll en pantallas pequeñas */
+    .scrolled .mariposa,
+    .scrolled .piernas {
+        display: none;
+    }
+
+    /* Ocultar el texto de 'Isa Cz' al hacer scroll en pantallas pequeñas */
+    .scrolled .firma_txt {
+        display: none;
+    }
+
+    /* Mostrar la imagen pequeña cuando se hace scroll en pantallas pequeñas */
+    .scrolled .static-logo {
+        display: block;
+        position: fixed; /* Se mantiene fija al hacer scroll */
+        left: -5px; /* Ajustar según el diseño */
+        top: 10px;  /* Ajustar según el diseño */
+        width: 80px; /* Ajustar tamaño según se necesite */
+        height: auto;
+    }
+}
+
+/* Ocultar el menú por defecto */
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#BE75BF, #D08FD9, #C599F2, #B488F2, #A47ED9);
+    /* background: linear-gradient(#914a8b, #854a91); */
+    /* background-color:#854a91; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+    z-index: 999;  
+}
+
+/* Mostrar el menú */
+.menu-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-content {
+    text-align: center;
+    color: #FFF;
+}
+
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-content ul li {
+    margin: 20px 0;
+}
+
+.menu-content ul li a {
+    color: #FFF;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+.menu-content ul li a:hover {
+    color: #854a91;  
+    font-size: 2.2rem; 
+}
+
+/* Botón de cerrar el menú */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 40px; /* Ajusta el tamaño del SVG */
+    height: 40px; /* Ajusta el tamaño del SVG */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+.close-menu svg {
+    width: 100%; /* SVG se ajusta al contenedor */
+    height: 100%;
+    fill: #FFF;
+    transition: transform 0.3s ease, fill 0.3s ease; 
+}
+
+.close-menu:hover svg {
+    transform: scale(1.2);
+    fill: #854a91; 
+}
+
+
+
+
+
+/* -------------------------------------------------------- */
+/* ******************  Empieza Slider  ********************* */
+/* -------------------------------------------------------- */
+
+.contenedor {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+}
+.control_slider {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 20;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    background-color: transparent; /* Eliminamos el fondo circular */
+}
+
+
+.control_slider svg {
+    width: 33px;
+    height: 33px;
+    fill: #fff;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.control_slider:hover svg {
+    /* background-color: rgba(0, 0, 0, .8); */
+    transform: scale(1.2);
+    fill: #854a91;
+}
+
+.controlL {
+    left: 15px;
+}
+
+.controlR {
+    right: 15px;
+}
+
+
+.cont_slider {
+    width: 200%;
+    height: auto;
+    overflow: auto;
+
+}
+
+.swiper_slider {
+    width: calc(100% / 8);
+    float: left;
+    display: block;
+    position: relative;
+    background-color: #8993aa;
+    overflow: hidden;
+    height: calc(100% / 8);
+    /* Ajustar altura para que se mantenga cuadrada */
+}
+
+.desaparece {
+    width: 0 !important;
+}
+
+
+.img_slide {
+    transition-duration: .4s;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Ajustar para que la imagen llene el contenedor cuadrado */
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+.swiper_slider:hover .img_slide {
+    transform: scale(1.2);
+    opacity: .4;
+}
+
+.titulo_slide {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #854a91;
+    visibility: hidden;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.swiper_slider:hover .titulo_slide {
+    visibility: visible;
+}
+
+
+/* -------------------------------------------------------- */
+/* ******************  presentación  ********************* */
+/* -------------------------------------------------------- */
+
+.icono-rayo {
+    width: 3rem; /* Ajusta el tamaño del ícono */
+    height: auto;
+    vertical-align: middle; /* Alinea el ícono con el texto */
+}
+
+@media (max-width: 600px) { 
+    .icono-rayo {
+        width: 2rem; 
+    }
+}
+
+
+/* div.text {
+    max-width: 50%;
+
+} */
+
+.contenedor-cajas {
+    width: 100%;
+    height: auto;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+}
+
+.caja.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.caja.imagen img {
+    max-width: 100%;
+    height: auto;
+    
+}
+.img24{
+    transition-duration: .4s;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+.caja.imagen:hover .img24{
+    transform: scale(1.2);
+    opacity: .4;
+}
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor-cajas {
+        flex-direction: column; /* Las cajas estarán una arriba de la otra en pantallas más pequeñas */
+    }
+    
+    .caja {
+        margin-bottom: 20px; /* Añadir espacio entre las cajas cuando se apilan */
+    }
+
+    .caja.imagen {
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.container {
+        padding: 2rem 2rem;
+    }
+
+    div.text {
+        max-width: 100%;
+    
+    }
+    p {
+        margin-bottom: 8px;
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+}
+/* -------------------------------------------------------- */
+/* ******************  Video  ********************* */
+/* -------------------------------------------------------- */
+
+/* Asegura que el contenedor cubra todo el ancho y alto del viewport */
+.video-contenedor {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* 100% del alto del viewport */
+    overflow: hidden;
+    border: 1px solid red; 
+}
+
+/* El contenedor para el iframe de YouTube */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* El video va por detrás del contenido */
+}
+
+/* Ajusta el iframe de YouTube para que ocupe todo el contenedor */
+.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no se pueda hacer clic en el video */
+    object-fit: cover; /* Hace que el video ocupe el espacio sin deformarse */
+}
+
+/* Estilo del contenido sobre el video */
+.contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 10; /* El contenido debe estar encima del video */
+    padding: 1rem;
+}
+
+/* Mejora para pantallas pequeñas */
+@media (max-width: 768px) {
+    .video-contenedor {
+        height: 70vh; /* Reduce la altura del contenedor en pantallas pequeñas */
+    }
+
+    .contenido {
+        font-size: 1.2rem; /* Ajusta el tamaño de texto */
+        padding: 0.5rem; /* Menos padding para pantallas pequeñas */
+    }
+
+    .video-background iframe {
+        object-fit: contain; /* Evita que se recorte el video en pantallas pequeñas */
+    }
+}
+
+/* Ajuste adicional para pantallas muy pequeñas (por ejemplo, móviles) */
+@media (max-width: 480px) {
+    .video-contenedor {
+        height: 60vh; /* Aún más pequeña para móviles */
+    }
+
+    .contenido {
+        font-size: 1rem; /* Texto más pequeño en móviles */
+    }
+
+    .video-background iframe {
+        object-fit: contain; /* El video se adapta mejor a pantallas más pequeñas */
+    }
+}
+/* -------------------------------------------------------- */
+/* ******************  servicios  ********************* */
+/* -------------------------------------------------------- */
+
+ul.servicios {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 2%;
+    padding: 0;
+}
+
+ul.servicios li {
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 300;
+    position: relative; /* Añadido para posicionar el icono correctamente */
+    padding-left: 1.5em; /* Ajustar el espacio a la izquierda para el icono */
+}
+@media (max-width: 768px){
+    ul.servicios li {
+        font-size: 1rem;
+    }
+}
+
+ul.servicios li::before {
+    content: ""; /* Ya no usaremos "⚡", sino un SVG como fondo */
+    display: inline-block;
+    width: 1em;
+    height: 1em; /* Tamaño del icono */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('../imgs/thunder.svg'); /* Aquí se coloca la ruta de tu icono SVG */
+    background-size: contain; /* Asegura que el SVG se escale adecuadamente */
+    background-repeat: no-repeat;
+}
+
+ul.servicios li:nth-child(1)::before {
+    content: none; /* No mostrar el ícono en el primer elemento, si es necesario */
+}
+
+.nube {
+    animation: mover 20s linear infinite;
+}
+
+@keyframes mover {
+    0%, 100% {
+    transform: translate(0, 0);
+    }
+
+    50% {
+    transform: translate(50px, 0);
+    }
+
+    80% {
+    transform: translate(-50px, 0);
+    }
+
+}
+/* -------------------------------------------------------- */
+/* ******************  contacto  ********************* */
+/* -------------------------------------------------------- */
+
+div.contacto {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #33355a;
+    color: #fff;
+   
+}
+p.footer {
+    font-size: 1rem;
+}
+.enlace {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #8993aa;
+    overflow: hidde;
+    background: linear-gradient(to right, #d2b3d8, #ac72b7 50%, #8993aa 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none; /* text decorations are clipped in WebKit browsers */   
+}
+
+.enlace:hover {
+    background-position: 0 100%;
+    
+}
+@media (max-width: 768px) {
+    .enlace {
+        font-size: .8em; 
+    }
+}
+
+
+
+/* -------------------------------------------------------- */
+/* ******************  Plantilla  ********************* */
+/* -------------------------------------------------------- */
+
+
+/* -------------------------------------------------------- */
+/* ******************  Texto  ********************* */
+/* -------------------------------------------------------- */
+.header {
+    height: 25rem;  
+}
+@media (max-width: 768px){
+    .header {
+        height: 25rem;  
+    } 
+}
+h1.titulo {
+    padding: 2rem 2rem;
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 130px;
+    text-align: left;
+    margin: 0;
+    z-index: 1; 
+}
+h2.titulo {
+    font-size: 3rem; 
+    font-weight: 500; 
+}
+@media (max-width: 768px){
+    h1.titulo {
+        font-size: 3rem;
+    }
+    h2.titulo {
+        font-size: 2rem; 
+    }
+    p {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: 300;
+    }
+}
+@media (max-width: 450px){
+    h1.titulo {
+        font-size: 2rem;
+    }
+}
+
+div.info {
+    margin-top: 2rem;
+}
+.info p {
+    text-align: left;
+}
+
+/* -------------------------------------------------------- */
+/* ******************  botones atras/next    ********************* */
+/* -------------------------------------------------------- */
+
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    margin: 2rem 0; /* Márgenes para dar espacio al footer */
+}
+
+.btn-nav {
+    padding: 0.4rem 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #8993aa; 
+    overflow: hidden;
+    background: linear-gradient(to right, #d2b3d8, #ac72b7 50%, #8993aa 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+}
+
+.btn-nav:hover {
+    background-position: 0 100%; 
+    color: transparent; 
+}
+
+@media (max-width: 768px) {
+    .btn-nav {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+/* -------------------------------------------------------- */
+/* ****************** imagenes o videos   ********************* */
+/* -------------------------------------------------------- */
+
+
+
+  
+  /* Contenedores de videos/imágenes en pantallas grandes */
+  .media-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: 600px;
+    overflow: hidden;
+    margin-bottom: 50px;
+  }
+
+  .media-container img, .media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .media-wrapper {
+    display: flex;
+    width: 100%;
+    margin: 0 auto; /* Centra el contenido */
+    height: auto; 
+  }
+
+  /* El contenedor de la imagen o video */
+  .media-item {
+    flex: 1 1 50%; /* Ocupa el 50% del ancho */
+    overflow: hidden;
+  }
+
+  /* Estilo para imagen o video */
+  .media-item img,.media-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen o video cubra todo el contenedor */
+    object-position: center; /* Centra el contenido */
+  }
+
+  /* Para pantallas grandes */
+  .media-item.empty {
+    flex: 1 1 50%; /* Mantiene el espacio vacío ocupando el 50% */
+  }
+
+  /* Responsivo para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .media-container {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .media-container img, .media-container video {
+      width: 100%;
+      height: auto;
+    }
+    .media-wrapper {
+        flex-direction: column; /* Las imágenes o videos se apilan verticalmente */
+        height: auto; /* Ajusta la altura automáticamente */
+      }
+  
+    .media-item {
+    flex: 1 1 100%; /* Las imágenes o videos ocupan el 100% del ancho */
+    margin-bottom: 20px; /* Agrega un margen inferior entre los elementos */
+    }
+
+    .media-item.empty {
+    display: none; /* Elimina el espacio vacío en pantallas pequeñas */
+    }
+  }
+
+.imgs_video {
+    opacity: 0; /* Inicialmente, invisible */
+    transform: translateY(20px); /* Mover ligeramente hacia abajo al inicio */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
+}
+
+.imgs_video.visible {
+    opacity: 1; /* Cuando la clase 'visible' se aplica, se vuelve visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+}

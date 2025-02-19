@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <title>Video Recortado</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 600px;
+            height: 800px;
+            position: relative;
+            overflow: hidden; /* Oculta el exceso del video */
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none; /* Para que el canvas no bloquee el video */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop muted playsinline>
+            <source src="imgs/e3.mp4" type="video/mp4">
+            Tu navegador no soporta videos en HTML5.
+        </video>
+        <script src="js/sketch.js"></script>
+    </div>
+
+    
+</body>
+</html>

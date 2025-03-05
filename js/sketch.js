@@ -9,7 +9,7 @@ function preload() {
 
 function setup() {
     let cnv=createCanvas(600, 800);
-  cnv.parent(document.querySelector('.container')); // Ubica el canvas en el contenedor
+  cnv.parent(document.querySelector('.containerP5')); // Ubica el canvas en el contenedor
   cnv.style("pointer-events", "none"); // Permite hacer clic en el video
 
 

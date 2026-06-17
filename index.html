@@ -19,202 +19,239 @@
     <meta property="og:url" content="https://isacz.netlify.app/">
     <meta property="og:type" content="website">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <div class="item">
-            <div class="firma">
-                <img src="imgs/mariposa.png" alt="mariposa" class="mariposa firma-item">
-                <img src="imgs/piernas.png" alt="piernas" class="piernas firma-item">
-                <!-- Nueva imagen estática para pantallas pequeñas -->
-                <img src="imgs/firmaIMG.png" alt="logo simple" class="static-logo">
-            </div>
-            <div class="firma_txt">
-                <img src="imgs/Isa_cz.svg" alt="Isa Cz" width="200" height="100" class="isasvg-hover">
-            </div>    
-        </div>
-    
-        <!-- Menú oculto -->
-        <div id="menu-overlay" class="menu-overlay hidden">
-            <div class="menu-content">
+    <main class="portfolio">
 
-                <div id="close-menu" class="close-menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24">
-                        <polygon class="cls-1" points="13.1 12.9 13.1 12.9 17.6 8.3 16.2 6.9 11.7 11.5 7.1 6.9 5.7 8.3 10.2 12.9 10.2 12.9 10.2 12.9 5.7 17.5 7.1 18.9 11.7 14.3 16.2 18.9 17.6 17.5 13.1 12.9 13.1 12.9"/>
-                    </svg>
-                </div> 
+        <header class="header">
+            <h1 class="logo">ISA CZ</h1>
+            <button class="menu-toggle">+</button>
+            <nav class="menu">
+                <a href="#">ABOUT</a>
+                <a href="#">IG</a>
+                <a href="#">BEHANCE</a>
+            </nav>
+        </header>
 
-                <div id="menu-container"></div>
-            </div>
-        </div>
-    </nav>
-    <!-- Imagen estática para pantallas pequeñas -->
-    
+        <section class="gallery">
+            <a href="obra-01.html" class="piece large">
+                <img src="img/01.jpg" alt="Obra 01">
+            </a>
+            <a href="obra-02.html" class="piece small">
+                <img src="img/02.jpg" alt="Obra 02">
+            </a>
+            <a href="obra-03.html" class="piece small">
+                <img src="img/03.jpg" alt="Obra 03">
+            </a>
+            <a href="obra-04.html" class="piece large">
+                <img src="img/04.jpg" alt="Obra 04">
+            </a>
+            <a href="obra-05.html" class="piece small">
+                <img src="img/05.jpg" alt="Obra 05">
+            </a>
+            <a href="obra-06.html" class="piece medium">
+                <img src="img/06.jpg" alt="Obra 06">
+            </a>
+            <a href="obra-07.html" class="piece medium">
+                <img src="img/07.jpg" alt="Obra 07">
+            </a>
+            <a href="obra-08.html" class="piece small">
+                <img src="img/08.jpg" alt="Obra 08">
+            </a>
+            <a href="obra-09.html" class="piece medium">
+                <img src="img/09.jpg" alt="Obra 09">
+            </a>
+            <a href="obra-10.html" class="piece small">
+                <img src="img/10.jpg" alt="Obra 10">
+            </a>
+            <a href="obra-11.html" class="piece small">
+                <img src="img/11.jpg" alt="Obra 11">
+            </a>
 
-    <div class="scroll-indicator">
-        <span class="scroll">!Desliza hacia abajo!</span>
-    </div>
 
-</header>
-
-    <!-- <div class="container">
-    </div>   -->
-
-    <!-- Secciones principales de tu página -->
-    <main>
-        <div class="container">
-            <h1>Hola</h1>
-        </div>
-
-
-        <section class="contenedor" id="slider">
-
-            <div class="control_slider controlL" id="controlL">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff">
-                    <path d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
-                </svg>
-            </div>
-            <div class="control_slider controlR" id="controlR">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#fff">
-                    <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
-                </svg>
-            </div>
-
-            <div class="cont_slider" id="cont_slider">
-                <a href="exploracion-suenos-recurrentes.html" class="swiper_slider" id="slider1">
-                    <img class="img_slide"  src="imgs/1_suenos_recurrentes.jpg" alt="">
-                    <h3 class="titulo_slide"></h3>
-                </a>
-                <a href="exploracion-visual-distorsiones.html" class="swiper_slider" id="slider2">
-                    <img class="img_slide" src="imgs/2_distorciones.jpg" alt="">
-                    <h3 class="titulo_slide"></h3>
-                </a>
-                <a href="bitacora-creativa.html" class="swiper_slider" id="slider3">
-                    <img class="img_slide"  src="imgs/3_devenir_tierra.jpg" alt="">
-                    <h3 class="titulo_slide"></h3>
-                </a>
-                <a href="lineas-generativas.html" class="swiper_slider" id="slider5">
-                    <img class="img_slide" src="imgs/4_p5.png" alt="">
-                    <h3 class="titulo_slide"></h3>
-                </a>
-                <a href="collage.html" class="swiper_slider" id="slider4">
-                    <img class="img_slide"  src="imgs/5_metamorfosisYfragmentacion.jpg" alt="">
-                    <h3 class="titulo_slide"></h3>
-                </a>
-	
-            </div> 
+            <a href="obra-11.html" class="piece medium">
+                <img src="img/11.jpg" alt="Obra 11">
+            </a>
+            <a href="obra-10.html" class="piece medium">
+                <img src="img/10.jpg" alt="Obra 10">
+            </a>
+            <a href="obra-09.html" class="piece small">
+                <img src="img/09.jpg" alt="Obra 09">
+            </a>
+            <a href="obra-08.html" class="piece large">
+                <img src="img/08.jpg" alt="Obra 08">
+            </a>
+            <a href="obra-07.html" class="piece small">
+                <img src="img/07.jpg" alt="Obra 07">
+            </a>
+            <a href="obra-05.html" class="piece medium">
+                <img src="img/05.jpg" alt="Obra 05">
+            </a>
+            <a href="obra-04.html" class="piece medium">
+                <img src="img/04.jpg" alt="Obra 04">
+            </a>
+            <a href="obra-03.html" class="piece small">
+                <img src="img/03.jpg" alt="Obra 03">
+            </a>
+            <a href="obra-02.html" class="piece medium">
+                <img src="img/02.jpg" alt="Obra 02">
+            </a>
+            <a href="obra-01.html" class="piece small">
+                <img src="img/01.jpg" alt="Obra 01">
+            </a>
+            <a href="obra-06.html" class="piece small">
+                <img src="img/06.jpg" alt="Obra 06">
+            </a>
         </section>
-
-        <div class="container">
-
-            <section class="contenedor-cajas">
-
-                <div class="caja text">
-                
-                    <p>Soy<span class="bold"> Isa <img src="imgs/thunder.svg" alt="Rayo" class="icono-rayo"/></span>, creadora visual y diseñadora web frontend UX/UI  de la Ciudad de 
-                    México. Combino arte y tecnología para crear piezas únicas y experiencias digitales que conectan con las personas.<br>
-                    Mi enfoque creativo nace del collage, un medio que me inspira a experimentar con técnicas y materiales, fusionando lo digital y 
-                    lo tangible. Esta perspectiva artística guía mi trabajo como diseñadora, permitiéndome desarrollar soluciones visuales que son tan 
-                    funcionales como estéticamente atractivas.<br>
-                    <b><span class="bold">¡Me encantaría escuchar tus ideas y colaborar en algo increíble juntxs!</span></b>
-                    </p>
-                </div>
-                <div class="caja imagen">
-                    <img src="imgs/represenatcion.png" alt="" class="nube">
-                </div>
-
-            </section>
-
-            
-        </div>
-
-
-        <!-- <section class="video-contenedor">
-            <div class="video-background">
-                <iframe></iframe>
-            </div>
-            
-            <div class="contenido">
-            </div>
-        </section> -->
-        <div class="container">
-
-            <section class="contenedor-cajas">
-
-                <div class="caja text">
-                    <h2 class="titulo"><span class="bold">¿Qué puedo hacer por ti?</span></h2>
-                    <p><span class="bold">Piezas de Arte Personalizadas</span><br> 
-                        Exploro lo visual para crear obras únicas que reflejen tu visión. 
-                        Ya sea que busques collages personalizados, piezas digitales o proyectos híbridos,
-                        estaré encantada de materializar tus ideas en algo especial.
-                        </p>
-                    <p><span class="bold">Diseño Web y UX/UI</span><br> Diseño y desarrollo sitios y aplicaciones web que:</p>   
-                    <p><u>Responden a las necesidades de tus usuarios:</u><br> Soluciones intuitivas, accesibles y atractivas.</p>
-                    <p><u>Fusionan funcionalidad y estética:</u><br> Cada detalle está pensado estratégicamente para conectar con tu público.</p>
-                    <p><u>Diseño auténtico:</u><br> Me aseguro de que tu marca destaque y resuene en el entorno digital.</p>
-                    <ul class="servicios">
-                        <li><span class="bold">Servicios Especializados</span></li>
-                        <li>Diseño Web: Creación de sitios web responsivos e intuitivos.</li>
-                        <li>Maquetación Frontend: Código limpio y optimizado para una experiencia fluida.</li>
-                        <li>UX/UI: Diseño centrado en el usuario, combinando usabilidad y creatividad.</li>
-                        <li>Diseño Gráfico: Iconografías, banners, gifs y más.</li>                  
-                        <li>Animaciones y Arte Digital: Desde collages digitales hasta animaciones que cobran vida.</li>
-                    </ul>     
-                </div>
-
-                <div class="caja imagen">
-                    <img src="imgs/represenatcion.png" alt="" class="nube">
-                </div>
-
-            </section>
-        </div>
-
-        <div class="container">
-
-            <h1>+ Info</h1>
-
-            <div class="contacto">
-                <p class="">¿Por qué trabajar conmigo? Entiendo que cada proyecto tiene un propósito único. 
-                    Mi objetivo es ayudarte a darle vida a tus ideas con un enfoque que combine creatividad, estrategia y atención al detalle..</p>
-                
-                
-                    <p>
-                    Para consultas, colaboraciones, compras
-                    o comisiones, escríbeme a:<br>
-                    <ul class="contacto"></ul>
-                        <li><a href="https://wa.me/525529712401?text=Hola,%20me%20gustaría%20saber%20más%20información" class="enlace" target="_blank">mi WhatsApp</a></li>
-
-                    </ul></p><p> Conoce más sobre mi trabajo en: </p>
-                    <ul class="contacto">
-                        <li><a href="https://www.behance.net/isabelaragon" target="_blank" class="enlace">Behance</a></li>
-                        <li><a href="https://www.instagram.com/entranavajas/" target="_blank" class="enlace">Instagram</a></li>
-                    </ul>
-                    <p>¡Gracias por visitar mi sitio! <br> ¡Espero tener noticias tuyas pronto!</p>
     
-            </div>
-        </div>
-
-
-
     </main>
-
-    <!-- Pie de página -->
-    <footer>
-        <p class="footer">&copy;2024 - Isa Cz</p>
+    <footer class="footer">
+        <span>Collage · Video · Archivo</span>
+        <span>©2026 — ISA CZ</span>
     </footer>
-    
 
-    <!-- Agrega scripts aquí  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/js.js"></script>
+        window.addEventListener('load', () => {
+        
+            // ===== GALERÍA =====
+        
+            const pieces = document.querySelectorAll('.piece');
+        
+            const layouts = [
+        
+                [
+                    {x:100, y:100},
+                    {x:800, y:800},
+                    {x:1200, y:250},
+                    {x:1800, y:450},
+                    {x:2500, y:150},
+                    {x:3000, y:500},
+                    {x:3500, y:100},
+                    {x:4000, y:700},
+                    {x:4700, y:300},
+                    {x:5300, y:800},
+                    {x:6000, y:400}
+                ],
+        
+                [
+                    {x:200, y:500},
+                    {x:900, y:180},
+                    {x:1400, y:700},
+                    {x:2000, y:250},
+                    {x:3500, y:850},
+                    {x:2900, y:350},
+                    {x:3800, y:200},
+                    {x:4400, y:200},
+                    {x:5000, y:550},
+                    {x:5600, y:300},
+                    {x:6200, y:800}
+                ],
+        
+                [
+                    {x:250, y:250},
+                    {x:850, y:750},
+                    {x:1300, y:200},
+                    {x:1900, y:600},
+                    {x:2800, y:300},
+                    {x:3100, y:850},
+                    {x:3700, y:200},
+                    {x:4300, y:650},
+                    {x:5000, y:250},
+                    {x:5600, y:900},
+                    {x:6200, y:500}
+                ]
+        
+            ];
+        
+            const selectedLayout =
+                layouts[Math.floor(Math.random() * layouts.length)];
+        
+            const SAFE_WIDTH = 6800;
+            const SAFE_HEIGHT = 1100;
+        
+            pieces.forEach((piece, index) => {
 
+                const layoutIndex = index % 11;
 
+                const row = Math.floor(index / 11);
+
+                let x = selectedLayout[layoutIndex].x;
+
+                let y =
+                    selectedLayout[layoutIndex].y +
+                    (row * 950);
+
+                const width = piece.offsetWidth;
+                const height = piece.offsetHeight;
+
+                if(x + width > SAFE_WIDTH){
+                    x = SAFE_WIDTH - width;
+                }
+
+                piece.style.left = `${x}px`;
+                piece.style.top = `${y}px`;
+
+                const rotation =
+                    (Math.random() * 8) - 4;
+
+                piece.style.transform =
+                    `rotate(${rotation}deg)`;
+
+            });
+        
+        
+            // ===== MENÚ MOBILE =====
+        
+            const button = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.menu');
+        
+            if(button){
+                if(button){
+
+button.addEventListener('click', () => {
+
+    menu.classList.toggle('active');
+
+    if(menu.classList.contains('active')){
+        button.textContent = '×';
+    }else{
+        button.textContent = '+';
+    }
+
+});
+
+}
+        
+                
+        
+            }
+        
+        });
+        
+        
+        // ===== SCROLL HORIZONTAL =====
+        
+        window.addEventListener('wheel', (e) => {
+        
+            if(e.shiftKey){
+        
+                e.preventDefault();
+        
+                window.scrollBy({
+                    left: e.deltaY,
+                    behavior: 'smooth'
+                });
+        
+            }
+        
+        }, { passive:false });
+        
+        </script>
 
 </body>
+
+
+
 </html>

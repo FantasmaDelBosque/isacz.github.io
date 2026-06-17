@@ -133,6 +133,7 @@ body::-webkit-scrollbar{
     height:auto;
     display:block;
     /*object-fit:cover;*/
+    transition: transform .6s ease, opacity .6s ease;
 }
 
 .piece:hover{

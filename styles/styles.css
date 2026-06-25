@@ -40,7 +40,11 @@ body::-webkit-scrollbar{
         display:block;
         background:none;
         border:none;
-        font-size:32px;
+        outline: none;
+        color:#111;
+        appearance: none;
+        -webkit-appearance: none;
+        font-size:38px;
         cursor:pointer;
     }
 
@@ -52,9 +56,14 @@ body::-webkit-scrollbar{
         flex-direction:column;
         align-items: flex-end;
         gap:12px;
-        background:white;
         padding:20px;
-        border:1px solid #ddd;
+    }
+
+    .menu a{
+        text-decoration:none;
+        color:#111;
+        font-size:18px;
+        letter-spacing:.03em;
     }
 
     .menu.active{

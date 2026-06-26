@@ -1,96 +1,107 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body{
+    background:#f8f6f3;
+    color:#171717;
     font-family: "Space Mono", monospace;
-    line-height: 1.6;
-    color: #111;
-    background-color: #f5f5f5;
+    overflow:hidden;
 }
 
-h1 {
-    font-size: 4rem;
-    font-weight: 300;
-    text-align: center;    
+.poster{
+    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-p {
-    margin-bottom: 10px;
-    font-size: 2rem;
-    font-weight: 300;
-    text-align: center;
+.error-number{
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-55%);
+    font-size:clamp(260px, 32vw, 520px);
+    font-weight:400;
+    color:#d9d6d1;
+    letter-spacing:-25px;
+    user-select:none;
+    pointer-events:none;
+    z-index:0;
+    font-family:"Courier Prime", monospace;
 }
 
-h1.error {
-    font-size: 8rem;
+.content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:600px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 }
 
-.error-page {
-    text-align: center;
-    padding: 20px;
-    
+.content p{
+    font-size:24px;
+    line-height:1.7;
+
 }
 
-.error-content {
-    max-width: 1800px; /* Ancho máximo del contenedor */
-    margin: 0 auto;   
+.content a{
+    margin-top:50px;
+    color:black;
+    text-decoration:none;
+    letter-spacing:2px;
+    transition:.4s;
+
 }
 
-.error-image {
-    width: 100%; 
-    max-width: 300px; 
-    margin-bottom: 20px; 
+.content a:hover{
+    letter-spacing:6px;
 }
 
+/* ===========================
+   Mobile
+=========================== */
 
-.btn-home {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 2.2rem;
-    position: relative;
-    display: inline-block;
-    font-weight: 600;
-    color: #8993aa;
-    overflow: hidde;
-    background: linear-gradient(to right, #d2b3d8, #ac72b7 50%, #8993aa 50%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    background-position: 100%;
-    transition: background-position 275ms ease;
-    text-decoration: none; /* text decorations are clipped in WebKit browsers */   
-}
+@media (max-width: 768px){
 
-.btn-home:hover {
-    background-position: 0 100%;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
+    .poster{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        padding:40px 24px;
     }
 
-    p {
-        font-size: 1rem;
-    }
-    h1.error {
-        font-size: 3rem;
+    .error-number{
+        position:relative;
+        top:auto;
+        left:auto;
+        transform:none;
+        font-size:clamp(120px, 34vw, 220px);
+        letter-spacing:-10px;
+        margin-bottom:40px;
     }
 
-    .error-image {
-        max-width: 200px;
+    .content{
+        max-width:100%;
+        text-align:center;
+        gap:10px;
     }
-    .btn-home{
-        font-size: 1.8rem;;
+
+    .content p{
+        font-size:18px;
+        line-height:1.8;
     }
+
+    .content a{
+        margin-top:40px;
+        font-size:15px;
+    }
+
 }

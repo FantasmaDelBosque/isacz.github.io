@@ -103,35 +103,29 @@ window.addEventListener('load', () => {
     }
 
 
-// ===== VIDEO =====
+    // ===== VIDEO =====
 
-const videos = document.querySelectorAll('.video-piece video');
+    const videos = document.querySelectorAll('.video-piece video');
 
-videos.forEach((video) => {
+    videos.forEach((video) => {
 
-    const videoPiece = video.closest('.video-piece');
+        const videoPiece = video.closest('.video-piece');
 
-    if (!videoPiece) return;
+        if (!videoPiece) return;
 
-    video.currentTime = 0;
+        video.currentTime = 0;
 
-    videoPiece.addEventListener('mouseenter', () => {
-
-        // Carga el video solo cuando el usuario pasa el mouse
-        if (video.preload === 'none') {
-            video.preload = 'metadata';
-            video.load();
-        }
-
-        video.play().catch(() => {
-            // Evita errores si el navegador bloquea la reproducción.
+        videoPiece.addEventListener('mouseenter', () => {
+            video.play().catch(() => {
+                // Evita errores si el navegador bloquea la reproducción.
+            });
         });
 
-    });
+        videoPiece.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
 
-    videoPiece.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0;
     });
 
 });

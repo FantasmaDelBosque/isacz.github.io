@@ -95,6 +95,16 @@ body::-webkit-scrollbar{
     letter-spacing:.05em;
 }
 
+.logo a{
+    color:#111;
+    text-decoration:none;
+    transition:opacity .3s ease;
+}
+
+.logo a:hover{
+    opacity:.5;
+}
+
 .menu{
     display:flex;
     flex-direction:column;
@@ -266,4 +276,239 @@ body::-webkit-scrollbar{
     font-size:12px;
     letter-spacing:.03em;
     z-index:1000;
+}
+
+/* ==================================================
+ABOUT / MANIFIESTO ERRANTE
+================================================== */
+
+.about-page{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    padding:140px 40px 120px;
+    overflow:hidden;
+}
+
+/* CONTENEDOR DEL MANIFIESTO */
+
+.manifesto-container{
+    position:relative;
+    z-index:10;
+    width:620px;
+    max-width:60vw;
+}
+
+
+/* TEXTO QUE SE VA ESCRIBIENDO */
+
+.manifesto-text{
+    position:relative;
+    z-index:10;
+    font-size:16px;
+    line-height:1.75;
+    white-space:pre-wrap;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top:80px;
+}
+
+
+/* CURSOR */
+
+.typing-cursor{
+    display:inline-block;
+    width:8px;
+    height:1em;
+    margin-left:4px;
+    background:#111;
+    vertical-align:-2px;
+    animation:cursorBlink .8s infinite;
+}
+
+
+@keyframes cursorBlink{
+
+    0%,
+    45%{
+        opacity:1;
+    }
+
+    46%,
+    100%{
+        opacity:0;
+    }
+
+}
+
+
+/* ==================================================
+PALABRAS GRANDES
+================================================== */
+
+.impact-word{
+    position:fixed;
+    font-family:"Space Mono", monospace;
+    font-weight:400;
+    line-height:.85;
+    color:#111;
+    opacity:0;
+    pointer-events:none;
+    z-index:2;
+    transform:translateY(30px);
+    transition:opacity 1s ease,transform 1.2s ease;
+}
+
+
+/* JS agrega esta clase */
+
+.impact-word.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* POSICIONES */
+
+.word-1{
+    top:4vh;
+    left:22vw;
+    font-size:clamp(80px, 13vw, 230px);
+}
+
+.word-2{
+    top:30vh;
+    right:40px;
+    font-size:clamp(80px, 12vw, 220px);
+}
+
+.word-3{
+    top:58vh;
+    left:40px;
+    font-size:clamp(75px, 11vw, 200px);
+}
+
+.word-4{
+    top:76vh;
+    right:40px;
+    font-size:clamp(70px, 10vw, 180px);
+}
+
+
+/* ==================================================
+LINK AL VIDEOARTE
+================================================== */
+
+.manifesto-video-link{
+    display:inline-block;
+    position:relative;
+    z-index:20;
+    margin-top:80px;
+    margin-left: 40px;
+    color:#111;
+    font-size:13px;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-bottom:1px solid #111;
+    padding-bottom:3px;
+    opacity:0;
+    transform:translateY(15px);
+    pointer-events:none;
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+
+/* JS agrega esta clase cuando termina el texto */
+
+.manifesto-video-link.visible{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+
+
+.manifesto-video-link:hover{
+    opacity:.5;
+}
+
+
+/* ==================================================
+RESPONSIVE
+================================================== */
+
+@media (max-width:768px){
+
+    .about-page{
+        padding:120px 20px 80px;
+        overflow:hidden;
+    }
+
+
+    .manifesto-meta{
+        font-size:10px;
+
+        margin-bottom:40px;
+    }
+
+
+    .manifesto-container{
+        width:100%;
+        max-width:100%;
+    }
+
+
+    .manifesto-text{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+
+    /*
+    En móvil las palabras grandes quedan
+    más sutiles para no dificultar la lectura.
+    */
+
+    .impact-word{
+        opacity:0;
+    }
+
+
+    .impact-word.visible{
+        opacity:.08;
+    }
+
+
+    .word-1{
+        top:18vh;
+        left:5vw;
+        font-size:20vw;
+    }
+
+
+    .word-2{
+        top:43vh;
+        right:-5vw;
+        font-size:19vw;
+    }
+
+
+    .word-3{
+        top:66vh;
+        left:-4vw;
+        font-size:17vw;
+    }
+
+
+    .word-4{
+        top:84vh;
+        right:5vw;
+        font-size:18vw;
+    }
+
+
+    .manifesto-video-link{
+        margin-top:60px;
+        font-size:11px;
+    }
+
 }

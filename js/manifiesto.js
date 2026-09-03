@@ -12,7 +12,23 @@ const manifesto = [
     `Defiendo las conexiones digitales en las cuales se puede conectar con personas afines, con la posibilidad de tejer red y facilitar la organización en colectivo.`,
   
     `Defiendo el uso de las nuevas herramientas que la época nos ofrece. Estoy convencida de que las herramientas no hacen al artista y tener miedo no es ninguna posibilidad.`,
-  
+
+    `Defiendo las tecnologías que nos permiten seguir expandiendo la realidad.  Cómo el textil, que muestra ventanas cuando los hilos atraviesan la tela, cada puntada forma una conexión, como la vida misma.`,
+
+    `Es irónico porque mientras los hilos unen, también perforan, abren espacio  para que el camino exista.`,
+
+    'O cómo las tecnologías computacionales/digitales que abren posibilidades, transforman prácticas  y rompen paradigmas.',
+
+    `Lo que cambia es la época, la complejidad y el tipo de relación que establecemos con cada herramienta y la creatividad no surge de consumir más sino de conectar mejor.`,
+
+    `Soy una errante  y me niego a definirme a través de un algoritmo.`,
+
+    `Soy una exploradora y pongo las herramientas al servicio de mi imaginación.`,
+
+    `Soy creadora, paso de la aguja al pixel, de la tela a la pantalla, de la exposición solar a la edición digital.`,
+
+    'Uso el arte y las tecnologías para unir, transformar, registrar y reconstruir.',
+
     `Isa Cz`
   ];
   
